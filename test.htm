@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Blackjack test</title>
+				
+		<link href="http://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet" type="text/css" />
+		<link href="main.css" rel="stylesheet" type="text/css" />
+	</head>
+	
+	<body>
+		<div id="blackjack-container">
+			<div class="card-shoe"></div>
+			
+			<div id="dealer-stack" class="stack">
+				<div class="header-bar">
+					<div class="player-name"></div>
+				</div>
+				<div class="card-list"></div>
+				<div class="hand-display"></div>
+			</div>
+
+			<div id="p0-stack" class="stack" data-player="0">
+				<div class="header-bar">
+					<div class="player-name"></div>
+					<div class="chips"></div>
+				</div>
+				<div class="hand-controls">
+					<div class="stand-button button">STAND</div>
+					<div class="hit-button button">HIT</div>
+					<div class="double-button button">DOUBLE</div>
+				</div>
+				<div class="card-list"></div>
+				<div class="hand-display"></div>
+			</div>
+
+			<div id="p1-stack" class="stack" data-player="1">
+				<div class="header-bar">
+					<div class="player-name"></div>
+					<div class="chips"></div>
+				</div>
+				<div class="hand-controls">
+					<div class="stand-button button">STAND</div>
+					<div class="hit-button button">HIT</div>
+					<div class="double-button button">DOUBLE</div>
+				</div>
+				<div class="card-list"></div>
+				<div class="hand-display"></div>
+			</div>
+
+			<div id="p2-stack" class="stack" data-player="2">
+				<div class="header-bar">
+					<div class="player-name"></div>
+					<div class="chips"></div>
+				</div>
+				<div class="hand-controls">
+					<div class="stand-button button">STAND</div>
+					<div class="hit-button button">HIT</div>
+					<div class="double-button button">DOUBLE</div>
+				</div>
+				<div class="card-list"></div>
+				<div class="hand-display"></div>
+			</div>
+
+			<div id="p3-stack" class="stack" data-player="3">
+				<div class="header-bar">
+					<div class="player-name"></div>
+					<div class="chips"></div>
+				</div>
+				<div class="hand-controls">
+					<div class="stand-button button">STAND</div>
+					<div class="hit-button button">HIT</div>
+					<div class="double-button button">DOUBLE</div>
+				</div>
+				<div class="card-list"></div>
+				<div class="hand-display"></div>
+			</div>
+
+			<div id="p4-stack" class="stack" data-player="4">
+				<div class="header-bar">
+					<div class="player-name"></div>
+					<div class="chips"></div>
+				</div>
+				<div class="hand-controls">
+					<div class="stand-button button">STAND</div>
+					<div class="hit-button button">HIT</div>
+					<div class="double-button button">DOUBLE</div>
+				</div>
+				<div class="card-list"></div>
+				<div class="hand-display"></div>
+			</div>
+			
+			<div class="deal-button button">DEAL AGAIN</div>
+		</div>
+		
+		<div id="debug">
+			<div id="deck-position">Deck position: <span></span></div>
+			<div id="deck-position-pc">Deck progress: <span></span></div>
+		</div>
+		
+		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script> -->
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript" src="jquery.rm.blackjack.js"></script>
+		<script type="text/javascript">
+			$(function() {	
+				$('#blackjack-container').blackJack();
+			});
+		</script>
+	</body>
+</html>

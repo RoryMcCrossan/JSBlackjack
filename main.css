@@ -1,0 +1,206 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+body { 
+	background-color: #333F33;
+	font: 62.5% arial;
+}
+
+#blackjack-container {
+	font-size: 1.1em;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #090;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+	/* border-radius: 10px; */
+}
+
+.stack {
+	position: absolute;
+	width: 300px;
+	height: 210px;
+	background-color: rgba(1, 1, 1, 0.25);
+	border-radius: 5px;
+	padding: 5px;
+	border: 3px solid transparent;
+}	
+	.stack.active {
+		border: 3px solid rgba(201, 201, 115, 1);
+		box-shadow: 0 0 20px rgba(201, 201, 115, 0.5);
+	}
+	.stack.blackjack {
+		background-color: #d6d185;
+	}
+	.stack.win {
+		background-color: #d6d185;
+	}
+	.stack.push {
+		background-color: #c9c9c9;
+	}
+	.stack.loss,
+	.stack.bust	{
+		opacity: 0.4;
+	}
+	.stack .header-bar {
+		overflow: hidden;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+	}
+	.stack .player-name {
+		color: rgba(255, 255, 255, 0.7);
+		opacity: 0.5em;
+		font: 1.5em 'Russo One', arial;
+		text-decoration: italic;
+		float: left;
+		width: 70%;
+	}
+	.stack .chips {
+		color: rgba(255, 255, 255, 0.7);
+		opacity: 0.5em;
+		font: 1.5em 'Russo One', arial;
+		float: right;
+		width: 30%;
+		text-align: right;
+	}
+	.stack .hand-controls {
+		position: absolute;
+		bottom: 15px;
+		left: 5px;
+		right: 5px;
+		display: none;
+	}
+	.stack .hand-controls .button {
+		background-color: #0C0;
+	}
+	.stack .hand-controls .button:hover {
+		background-color: #0D0;
+	}
+	.stack .hand-controls.no-double .double-button {
+		display: none;
+	}
+	
+	.stack .card-list {
+		position: relative;
+		margin-top: 5px;
+	}
+	.stack .card-list p {
+		margin-bottom: 5px;
+	}
+	.stack .hand-display {
+		position: absolute;
+		right: 5px;
+		bottom: -5px;
+		color: rgba(255, 255, 255, 0.5);
+		font: bold 4em 'Russo One', arial;
+		display: none;
+	}
+#dealer-stack {
+	top: 10px;
+	left: 50%;
+	margin-left: -175px;
+}
+#p0-stack {
+	top: 50%;
+	right: 10px;
+	margin-top: -105px;
+}
+#p1-stack {
+	bottom: 70px;
+	left: 71%;
+	margin-left: -150px;
+}
+#p2-stack {
+	bottom: 10px;
+	left: 50%;
+	margin-left: -150px;
+}
+#p3-stack {
+	bottom: 70px;
+	left: 29%;
+	margin-left: -150px;
+}
+#p4-stack {
+	top: 50%;
+	left: 10px;
+	margin-top: -105px;
+}
+
+.button {
+	color: #FFF;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	display: inline;
+}
+
+.deal-button {
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	background-color: #C00;
+	display: none;
+}
+
+#debug {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	border-radius: 5px;
+	width: 150px;
+	height: 50px;
+	background-color: #333;
+	opacity: 0.75;
+	color: #EEE;
+	padding: 5px;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(720deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(720deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(720deg); transform:rotate(720deg); } }
+
+.card {
+	width: 100px;
+	height: 145px;
+	background-size: cover;
+}
+.card-shoe {
+	position: absolute;
+	top: -300px;
+	left: 50%;
+	margin-left: -50px;
+}
+.card-shoe .card {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+.card-shoe .card.deal-spin {
+	-webkit-animation: spin 0.5s ease-out;
+	-moz-animation: spin 0.5s ease-out;
+	animation: spin 0.5s ease-out;
+}
+.stack .card {
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+	position: fixed;
+}
+.stack .card.hide {
+	visibility: hidden;	
+}
+.stack .card:first-child + .card {
+	margin-left: 25px;
+}
+.stack .card:first-child + .card + .card {
+	margin-left: 50px;
+}
+.stack .card:first-child + .card + .card + .card {
+	margin-left: 75px;
+}
+.stack .card:first-child + .card + .card + .card + .card {
+	margin-left: 100px;
+}
+.stack .card:first-child + .card + .card + .card + .card + .card {
+	margin-left: 125px;
+}
